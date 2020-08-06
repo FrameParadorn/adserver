@@ -10,7 +10,7 @@
 </div>
 <div class="form-group {{ $errors->has('image') ? 'has-error' : ''}}">
     <label for="image" class="control-label">{{ 'Image' }}</label>
-    <input class="form-control" name="image" type="file" id="image" value="{{ isset($slide->image) ? $slide->image : ''}}" required>
+    <input class="form-control" name="image" type="file" id="image" value="{{ isset($slide->image) ? $slide->image : ''}}" {{ isset($isEdit) ? "required" : "" }}>
     {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
 
     @isset($slide->image)

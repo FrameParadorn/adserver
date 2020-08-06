@@ -88,7 +88,12 @@ class servicesController extends Controller
     {
         $service = service::findOrFail($id);
 
-        return view('admin.services.edit', compact('service'));
+        $data = [
+            'service' => $service,
+            'isEdit' => true 
+        ];
+
+        return view('admin.services.edit', $data);
     }
 
     /**

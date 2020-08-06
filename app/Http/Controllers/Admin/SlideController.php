@@ -93,8 +93,12 @@ class SlideController extends Controller
     public function edit($id)
     {
         $slide = Slide::findOrFail($id);
+        $data = [
+            'slide' => $slide,
+            'isEdit' => true 
+        ];
 
-        return view('admin.slide.edit', compact('slide'));
+        return view('admin.slide.edit', $data);
     }
 
     /**

@@ -98,7 +98,12 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
 
-        return view('admin.news.edit', compact('news'));
+        $data = [
+            'news' => $news,
+            'isEdit' => true 
+        ];
+
+        return view('admin.news.edit', $data);
     }
 
     /**
