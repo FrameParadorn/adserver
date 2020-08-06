@@ -1,6 +1,6 @@
 <div class="form-group {{ $errors->has('icon') ? 'has-error' : ''}}">
     <label for="icon" class="control-label">{{ 'Icon' }}</label>
-    <input class="form-control" name="icon" type="file" id="icon" value="{{ isset($service->icon) ? $service->icon : ''}}" {{ isset($isEdit) ? "required" : "" }}>
+    <input class="form-control" name="icon" type="file" id="icon" value="{{ isset($service->icon) ? $service->icon : ''}}" {{ !isset($isEdit) ? "required" : "" }}>
     {!! $errors->first('icon', '<p class="help-block">:message</p>') !!}
     @isset($service->icon)
     <img src="/storage/{{ $service->icon }}" style="width: 50px;" class="mt-3">
